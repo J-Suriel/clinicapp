@@ -1,0 +1,132 @@
+/* Page section */
+.login-section {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Login card container */
+.login-card {
+  width: 420px; /* wider by ~0.5 cm */
+  background: #ffffff;
+
+  padding: 50px 45px; /* +0.5 cm extra padding on all sides */
+
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e6e6e6;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Role toggle container */
+.role-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+/* Toggle buttons */
+.role-button {
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  background: #ffffff;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.role-button:hover {
+  background: #e8f1ff;
+}
+
+.role-button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Form labels */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+/* Input fields */
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  font-size: 15px;
+
+  /* increased spacing */
+  margin-bottom: 22px;
+
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Login button */
+.btn-primary {
+  background: #007bff;
+  border: none;
+  padding: 12px 0;
+  font-size: 17px;
+  border-radius: 6px;
+  width: 100%;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #005fcc;
+}
+
+/* Outline button (Create Account) */
+.btn-outline-primary {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  transition: 0.2s;
+}
+
+.btn-outline-primary:hover {
+  background: #e8f1ff;
+}
+
+/* Back link */
+.login-card a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* Move 'Back to Welcome Page' lower by 0.5 cm */
+.back-link {
+  display: inline-block;
+  margin-top: 20px; /* ~0.5 cm */
+  color: #007bff;
+}
