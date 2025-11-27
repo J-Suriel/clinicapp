@@ -42,6 +42,11 @@ model Patient {
   phone        String?
   createdAt    DateTime @default(now())
   appointments Appointment[]
+
+  // ✅ NEW OPTIONAL FIELDS (for Create Account form)
+  firstName     String?
+  lastName      String?
+  insuranceCard String?
 }
 
 model Doctor {
