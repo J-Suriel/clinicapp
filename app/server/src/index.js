@@ -8,6 +8,7 @@ const { Pool } = require("pg");
 
 const authRouter = require("./routes/auth");
 const apptRouter = require("./routes/appointments");
+const doctorRouter = require("./routes/doctor"); // ⬅️ NEW: doctor routes
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use(
 /* 3) Routes */
 app.use("/api/auth", authRouter);
 app.use("/api/appointments", apptRouter);
+app.use("/api/doctor", doctorRouter); // ⬅️ NEW: mount doctor API under /api/doctor
 
 /* 4) Error handler (last) */
 app.use((err, _req, res, _next) => {

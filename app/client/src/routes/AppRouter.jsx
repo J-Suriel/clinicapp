@@ -10,13 +10,14 @@ import DoctorLayout from "../layouts/DoctorLayout";
 // pages
 import WelcomePage from "../pages/WelcomePage";
 import LoginPage from "../pages/auth/LoginPage";
-import CreateAccountPage from "../pages/auth/CreateAccountPage"; // UPDATED
+import CreateAccountPage from "../pages/auth/CreateAccountPage";
 
 import PatientDashboard from "../pages/patient/PatientDashboard";
 import PatientAppointmentsPage from "../pages/patient/PatientAppointmentPage";
 import PatientProfilePage from "../pages/patient/PatientProfilePage";
 
 import DoctorDashboard from "../pages/doctor/DoctorDashboard";
+import DoctorSearch from "../pages/doctor/DoctorSearch";
 
 // helpers
 import ProtectedRoute from "../components/ProtectedRoute";
@@ -32,6 +33,7 @@ export default function AppRouter() {
         const user = await api("/api/auth/me");
         setMe(user);
       } catch {
+        // not logged in
       } finally {
         setLoading(false);
       }
@@ -65,8 +67,6 @@ export default function AppRouter() {
           />
 
           <Route path="/login" element={<LoginPage me={me} setMe={setMe} />} />
-
-          {/* UPDATED ROUTE */}
           <Route path="/create-account" element={<CreateAccountPage />} />
         </Route>
 
@@ -95,6 +95,8 @@ export default function AppRouter() {
           }
         >
           <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+          {/* 🔹 New route for staff patient search */}
+          <Route path="/doctor/search" element={<DoctorSearch />} />
         </Route>
 
         {/* Fallback */}
